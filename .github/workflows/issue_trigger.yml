@@ -21,12 +21,12 @@ jobs:
         echo "ISSUE_TITLE=${{ github.event.issue.title }}" >> $GITHUB_ENV
         echo "ISSUE_URL=${{ github.event.issue.html_url }}" >> $GITHUB_ENV
     
-    - name: Notify job started
-      if: env.ISSUE_TITLE != ''
-      uses: ben-z/actions-comment-on-issue@1.0.2
-      with:
-        message: "Hello, GPT-Codemaster here. I'm starting to work on the issue, give me a moment...\n\n [Job progress](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/)"
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #- name: Notify job started
+    #  if: env.ISSUE_TITLE != ''
+    #  uses: ben-z/actions-comment-on-issue@1.0.2
+    #  with:
+    #    message: "Hello, GPT-Codemaster here. I'm starting to work on the issue, give me a moment...\n\n [Job progress](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/)"
+    #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Remove label
       if: env.ISSUE_TITLE != ''
