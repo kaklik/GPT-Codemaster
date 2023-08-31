@@ -44,8 +44,16 @@ public class SolverProgressLoggerInIssue : ISolverProgressLogger
 
     public async Task LogChatResponse(string response)
     {
-        string comment = $"## AI Response\n" +
-                         $"{response}";
+        string comment;
+        
+        if (response.StartsWith("## AI Response"))
+        {
+            comment = response;
+        }
+        else
+        {
+            comment = $"## AI Response\n{response}";
+        }
 
         GithubIssueContext context = _contextProvider.Get();
         
