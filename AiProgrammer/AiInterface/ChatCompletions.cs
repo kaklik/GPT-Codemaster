@@ -85,7 +85,7 @@ public class ChatCompletions : ICompletions, IChat
 
         chat.RequestParameters.TopP = 1;
         chat.RequestParameters.Temperature = 1;
-        chat.RequestParameters.MaxTokens = 8191; //TODO: Change for bigger models, like 32k model.
+        chat.RequestParameters.MaxTokens = 4096; //TODO: Change for bigger models, like 32k model.
         chat.RequestParameters.Model = "gpt-4";
 
         chat.AppendSystemMessage(systemMessage);
